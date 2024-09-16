@@ -469,7 +469,7 @@ body {
 --------------------------------------------------------------*/
 .project__content {
   width: 100%;
-  max-width: 45rem;
+  max-width: 30rem;
   justify-self: center;
 }
 
