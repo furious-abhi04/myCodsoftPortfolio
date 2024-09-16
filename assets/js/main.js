@@ -37,13 +37,13 @@ function wakeBackend(event) {
       .then(response => {
         console.log('response: ', response);
         if (response.ok) {
-          // After the backend is awake, redirect to the frontend
-          window.open('https://password-manager-frontend-c7cv.onrender.com/login', '_blank');
+          console.log('backend active');
         } else {
           console.error('Backend wake-up failed');
         }
       })
       .catch(error => console.error('Error:', error));
+      window.open('https://password-manager-frontend-c7cv.onrender.com/login', '_blank');
   }
 
 
