@@ -32,8 +32,10 @@ function changeIcon() {
 
 function wakeBackend(event) {
     event.preventDefault(); // Prevent the immediate redirection
+    console.log('waking up backend');
     fetch('https://password-manager-backend-eu27.onrender.com')
       .then(response => {
+        console.log('response: ', response);
         if (response.ok) {
           // After the backend is awake, redirect to the frontend
           window.open('https://password-manager-frontend-c7cv.onrender.com/login', '_blank');
