@@ -28,6 +28,23 @@ function changeIcon() {
   }
 }
 
+// spin up backend before redirecting to frontend of password manager
+
+function wakeBackend(event) {
+    event.preventDefault(); // Prevent the immediate redirection
+    fetch('https://password-manager-backend-eu27.onrender.com')
+      .then(response => {
+        if (response.ok) {
+          // After the backend is awake, redirect to the frontend
+          window.open('https://password-manager-frontend-c7cv.onrender.com/login', '_blank');
+        } else {
+          console.error('Backend wake-up failed');
+        }
+      })
+      .catch(error => console.error('Error:', error));
+  }
+
+
 // Testimonial Slide
 
 const testimonialSlide = new Swiper(".testimonial__wrapper", {
